@@ -1,0 +1,23 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiteSql.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Добавить нового пользователя" FontSize="24" HorizontalOptions="Center" />
+
+        <Entry x:Name="NameEntry" Placeholder="Имя" />
+        <Entry x:Name="AgeEntry" Placeholder="Возраст" Keyboard="Numeric" />
+
+        <Button Text="Добавить" Clicked="OnAddPersonClicked" />
+
+        <Label Text="Список пользователей" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,0" />
+
+        <ListView x:Name="PersonsListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Age}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
